@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shelkemicroservices 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shelkemicroservices
+  template:
+    metadata:
+      labels:
+        app: shelkemicroservices 
+    spec:
+      containers:
+        - name: shelkemicroservices 
+          image: dockeraz.azurecr.io/shelkemicroservices
+          ports:
+          - containerPort: 8989
